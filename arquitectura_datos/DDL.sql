@@ -55,7 +55,6 @@ DROP TABLE IF EXISTS classroom;
 
 
 /*PASO 5.1 CREATE TABLES*/
-
 SET search_path = courses;
 CREATE TABLE classroom
 (
@@ -171,8 +170,7 @@ CREATE TABLE time_slot
     start_min    numeric(2) CHECK (start_min >= 0 and start_min < 60),
     end_hr       numeric(2) CHECK (end_hr >= 0 and end_hr < 24),
     end_min      numeric(2) CHECK (end_min >= 0 and end_min < 60),
-    PRIMARY KEY (time_slot_id, day, start_hr, start_min),
-    UNIQUE (time_slot_id)
+    PRIMARY KEY (time_slot_id, day, start_hr, start_min)
 );
 
 CREATE TABLE prereq
@@ -319,7 +317,6 @@ CREATE TABLE prereq
     FOREIGN KEY (course_id) REFERENCES course (course_id),
     CHECK (prereq_id > 0)
 );
-
 /*6-addMissingReferenceTimeSlot*/
 /*****no funciono*****/
 SET search_path = courses;
