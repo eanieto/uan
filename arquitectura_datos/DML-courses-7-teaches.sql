@@ -1,6 +1,5 @@
 SET search_path = courses;
 
-
 INSERT INTO teaches VALUES('34175', '747', '1', 'Spring', 2004);
 INSERT INTO teaches VALUES('3199', '169', '1', 'Spring', 2007);
 INSERT INTO teaches VALUES('6569', '445', '1', 'Spring', 2001);

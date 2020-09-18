@@ -50,3 +50,4 @@ INSERT INTO instructor VALUES('28400', 'Atanassov', 'Statistics', 84982.92);
 INSERT INTO instructor VALUES('41930', 'Tung', 'Athletics', 50482.03);
 INSERT INTO instructor VALUES('19368', 'Wieland', 'Pol. Sci.', 124651.41);
 INSERT INTO instructor VALUES('99052', 'Dale', 'Cybernetics', 93348.83);
+INSERT INTO instructor VALUES('99999', 'Edwin', 'Cybernetics', 93348.83);
