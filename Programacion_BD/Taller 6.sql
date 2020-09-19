@@ -31,7 +31,7 @@ insert into familia values (10,'Diana',6);
 
 
 
-prepare consulta from  "
+prepare consulta from "
 WITH RECURSIVE familia_jerarquia as (
     select id,
            nombre,
@@ -51,6 +51,6 @@ select *
 from familia_jerarquia inner join jerarquia on familia_jerarquia.jerarquia = jerarquia.nivel
 order by 4,2 asc";
 
-set @jerarquia = 2
+set @jerarquia = 2;
 execute consulta using @jerarquia
 ;
