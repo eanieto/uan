@@ -49,7 +49,7 @@ WITH RECURSIVE familia_jerarquia as (
 )
 select *
 from familia_jerarquia inner join jerarquia on familia_jerarquia.jerarquia = jerarquia.nivel
-order by 4,2 asc"
+order by 4,2 asc";
 
 set @jerarquia = 2
 execute consulta using @jerarquia
