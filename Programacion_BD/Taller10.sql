@@ -1,6 +1,10 @@
 CREATE DATABASE DWH;
-
 USE DWH;
+/*
+NOTA:
+EJECUTAR EN EL ORDEN DEL ARCHIVO PARA EL CORRECTO FUNCIONAMIENTO DEL PROCEDIMIENTO PRINCIPAL.
+
+*/
 /*CREACION DE PREREQUISITOS
   creacion de funcion de nombramiento de mes en español.
   */
@@ -73,7 +77,6 @@ DELIMITER ;
 funcion mover lunes
 */
 
-DROP FUNCTION mover_lunes;
 DELIMITER |
 CREATE  FUNCTION mover_lunes(fecha date)
 RETURNS  DATE DETERMINISTIC
@@ -89,7 +92,6 @@ DELIMITER ;
 /*
 Funcion de conte de dias habiles
 */
-DROP  FUNCTION ConteoHabiles;
 CREATE FUNCTION ConteoHabiles(fecha date, is_anio bool)
     RETURNS integer deterministic
     READS SQL DATA
@@ -109,7 +111,6 @@ END;
 /*
 Funcion de conte de dias NO HABILES
 */
-DROP  FUNCTION ConteoNoHabiles;
 CREATE FUNCTION ConteoNoHabiles(fecha date, is_anio bool)
     RETURNS integer deterministic
     READS SQL DATA
@@ -235,7 +236,7 @@ BEGIN
 END |
 DELIMITER ;
 /*
-  CREACION DEL PROCEDIMIENTO ALMACENADO PRINCIPAL
+  ***************************CREACION DEL PROCEDIMIENTO ALMACENADO PRINCIPAL*******************************
   */
 DROP PROCEDURE IF EXISTS PROC_DIM_TIEMPO;
 delimiter |
@@ -245,6 +246,9 @@ BEGIN
     DECLARE var_fecha_ini DATE;
     DECLARE var_fecha_fin DATE;
     DECLARE var_num_datos INTEGER;
+    declare var_inicio_proc timestamp;
+    declare var_fin_proc timestamp;
+    set var_inicio_proc = current_timestamp;
     SET var_fecha_ini = str_to_date(concat(anio_inicial,'-',01,'-',01),'%Y-%m-%d');
     SET var_fecha_fin = str_to_date(concat(anio_final,'-',12,'-',31),'%Y-%m-%d');
     /*Creacion de la tabla e insersion del primer registro*/
@@ -291,17 +295,16 @@ BEGIN
      llamando procedimiento almacenado que calcula los dias habiles y no habiles, actualizando la tabla dimension
       */
     CALL PROC_HABILES(var_num_datos);
-
-
     /*Limpiando temporales y basura*/
     DROP TABLE IF EXISTS DWH.FESTIVOS;
 
+    /*Mensaje final*/
+    set var_fin_proc = current_timestamp;
 END|
 delimiter ;
+/*PRUEBA DE FUNCIONAMIENTO*/
+CALL PROC_DIM_TIEMPO(2018, 2020);
 
-CALL PROC_DIM_TIEMPO(2018, 2020)
-
-SELECT COUNT(*) FROM DWH.DIM_FECHA;
-SELECT * FROM dim_fecha;
-
-SELECT * FROM dim_fecha WHERE SK_FECHA = 20201031;
+SELECT
+*
+FROM DWH.DIM_FECHA
