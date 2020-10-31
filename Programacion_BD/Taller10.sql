@@ -26,7 +26,48 @@ BEGIN
     ELSE 'esto no es un mes' END mes_nombre into mes;
     return mes;
 END|
+DELIMITER ;
 
+
+/*Funcion dia de pascua*/
+DELIMITER |
+CREATE  FUNCTION dia_pascua(anio VARCHAR(4))
+RETURNS  DATE DETERMINISTIC
+BEGIN
+    DECLARE p_m INTEGER;
+    DECLARE p_n INTEGER;
+    DECLARE p_a INTEGER;
+    DECLARE p_b INTEGER;
+    DECLARE  p_c INTEGER;
+    DECLARE  p_d INTEGER;
+    DECLARE  p_e INTEGER;
+    DECLARE  p_dia INTEGER;
+    DECLARE  p_mes INTEGER;
+    DECLARE f_pascua date;
+    SET p_m = 24;
+    set p_n = 5;
+    set p_a = mod(anio,19);
+    set p_b = mod(anio,4);
+    set p_c = mod(anio,7);
+    set p_d = mod((19*p_a+p_m),30);
+    set p_e = mod((2*p_b+4*p_c+6*p_d+p_n),7);
+    if p_d+p_e < 10 then
+        set p_dia = p_d+p_e+22;
+        set p_mes = 3;
+    else
+        set p_dia = p_d+p_e-9;
+        set p_mes = 4;
+    end if;
+    if p_dia = 26 and p_mes = 4 then
+        set p_dia = 19;
+    else if p_dia = 25 and p_mes = 4 and p_d = 28 and p_e = 6 and p_a > 10 then
+            set p_dia = 18;
+        end if ;
+    end if ;
+    set f_pascua =  str_to_date(concat(anio,'-',p_mes,'-',p_dia),'%Y-%m-%d');
+    return f_pascua;
+END|
+DELIMITER ;
 
 
 /*
