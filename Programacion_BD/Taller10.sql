@@ -3,7 +3,7 @@ USE DWH;
 /*
 NOTA:
 EJECUTAR EN EL ORDEN DEL ARCHIVO PARA EL CORRECTO FUNCIONAMIENTO DEL PROCEDIMIENTO PRINCIPAL.
-
+Autor:Edwin Alberto Nieto Fagua
 */
 /*CREACION DE PREREQUISITOS
   creacion de funcion de nombramiento de mes en español.
