@@ -1,0 +1,294 @@
+IF EXISTS(SELECT 1 FROM sys.tables WHERE object_id = OBJECT_ID('DIM_AGENTE'))
+BEGIN;
+    DROP TABLE [DIM_AGENTE];
+END;
+GO
+
+CREATE TABLE [DIM_AGENTE] (
+    [DIM_AGENTEID] INTEGER NOT NULL IDENTITY(1, 1),
+    [SK_AGENTE] INTEGER NULL,
+    [TIPOID] VARCHAR(2) NULL,
+    [ID] INTEGER NULL,
+    [NOMBRE] VARCHAR(100) NULL,
+    [APELLIDOS] VARCHAR(100) NULL,
+    PRIMARY KEY ([DIM_AGENTEID])
+);
+
+INSERT INTO DIM_AGENTE(SK_AGENTE,[TIPOID],[ID],[NOMBRE],[APELLIDOS])VALUES (1,'CE',540772625,'Daryl','Ayers'),(2,'CC',165339018,'Simone','Peck'),(3,'PA',493683373,'Kimberly','Mccormick'),(4,'CE',1063532062,'Karyn','Mcbride'),(5,'CE',998190579,'Phillip','Cantrell'),(6,'CC',1197722379,'Mia','Kinney'),(7,'CC',1094537408,'Ivana','Sheppard'),(8,'CC',705360971,'Iris','Alston'),(9,'CC',652771635,'Sloane','Morrow'),(10,'CC',160166308,'Amelia','Benton');
+INSERT INTO DIM_AGENTE(SK_AGENTE,[TIPOID],[ID],[NOMBRE],[APELLIDOS])VALUES (11,'PA',763972427,'August','Trujillo'),(12,'CC',174055529,'Raya','Cummings'),(13,'CE',528231462,'Louis','Norman'),(14,'PA',595345399,'William','Logan'),(15,'CC',506774402,'Tarik','Kaufman'),(16,'PA',987443699,'Salvador','Cruz'),(17,'CC',714674166,'Rana','Hunter'),(18,'CE',1073333242,'Wyatt','Riddle'),(19,'PA',493352360,'Porter','Charles'),(20,'CC',39563484,'Jessamine','Munoz');
+INSERT INTO DIM_AGENTE(SK_AGENTE,[TIPOID],[ID],[NOMBRE],[APELLIDOS])VALUES (21,'CE',307902975,'Griffith','Rios'),(22,'CE',903127908,'Colin','Mccoy'),(23,'PA',1153866608,'Paula','Crawford'),(24,'PA',1220033947,'Reuben','Riddle'),(25,'CE',863700023,'Dalton','Barnett'),(26,'CC',346464763,'James','Stone'),(27,'PA',664934518,'Brianna','Navarro'),(28,'PA',731029512,'Omar','Shaffer'),(29,'PA',435212318,'Oleg','Hall'),(30,'CC',525476022,'Bo','Curry');
+INSERT INTO DIM_AGENTE(SK_AGENTE,[TIPOID],[ID],[NOMBRE],[APELLIDOS])VALUES (31,'CC',176107601,'Slade','Sexton'),(32,'CC',1130177279,'Stuart','Cortez'),(33,'CE',498943332,'Karleigh','Humphrey'),(34,'CE',178541252,'Blythe','Mullins'),(35,'CE',371829365,'Brody','Stone'),(36,'CC',1203309422,'Melyssa','Acevedo'),(37,'PA',185356933,'Daniel','Wall'),(38,'CE',318234273,'Roanna','Cannon'),(39,'PA',679019486,'Len','Ware'),(40,'PA',581442157,'Malachi','Mccoy');
+INSERT INTO DIM_AGENTE(SK_AGENTE,[TIPOID],[ID],[NOMBRE],[APELLIDOS])VALUES (41,'CE',920872631,'Kathleen','Grimes'),(42,'CE',182488444,'Shaeleigh','Travis'),(43,'CC',130754160,'Blair','Franco'),(44,'CC',644412193,'Judith','Miles'),(45,'CC',460891912,'Thor','Washington'),(46,'CC',1105038781,'Oprah','Nixon'),(47,'CE',1129920187,'Conan','Atkins'),(48,'CE',895548878,'Rajah','Charles'),(49,'CE',507208306,'Miranda','Avery'),(50,'CE',560958127,'Macy','Olson');
+INSERT INTO DIM_AGENTE(SK_AGENTE,[TIPOID],[ID],[NOMBRE],[APELLIDOS])VALUES (51,'CE',1205194217,'Odysseus','Reyes'),(52,'PA',438206425,'Aspen','Leblanc'),(53,'CC',901136698,'Amelia','Orr'),(54,'CC',563977692,'Lyle','Fleming'),(55,'CC',1188517140,'Hayes','Pierce'),(56,'CE',369055976,'Bianca','Frederick'),(57,'CE',78790907,'Ethan','Spears'),(58,'CE',991421586,'Coby','Mitchell'),(59,'CE',404830038,'Keaton','Patterson'),(60,'PA',799114771,'Gloria','Robles');
+INSERT INTO DIM_AGENTE(SK_AGENTE,[TIPOID],[ID],[NOMBRE],[APELLIDOS])VALUES (61,'CE',424200579,'Harlan','Byrd'),(62,'CC',775593541,'Cade','Bauer'),(63,'CC',88378901,'Steven','Puckett'),(64,'CC',656081424,'Hermione','Dale'),(65,'PA',465799319,'Jin','Parsons'),(66,'CC',751701483,'Brynne','Hunter'),(67,'CC',6549114,'George','Jefferson'),(68,'PA',790072592,'Quin','Barlow'),(69,'CE',184416921,'David','Yang'),(70,'CE',873777239,'Heidi','Hudson');
+INSERT INTO DIM_AGENTE(SK_AGENTE,[TIPOID],[ID],[NOMBRE],[APELLIDOS])VALUES (71,'CE',1024110187,'Ashely','Combs'),(72,'CC',39056184,'Camille','Keller'),(73,'CC',1001128891,'Colt','Cochran'),(74,'CC',752281779,'Abbot','Henson'),(75,'CC',60184559,'Amelia','Pace'),(76,'PA',11465400,'Yoko','Bowers'),(77,'PA',783025670,'Allistair','Powers'),(78,'CC',916232382,'Yasir','Donaldson'),(79,'CC',292581616,'Dylan','Rice'),(80,'CC',598705459,'Jescie','Sims');
+INSERT INTO DIM_AGENTE(SK_AGENTE,[TIPOID],[ID],[NOMBRE],[APELLIDOS])VALUES (81,'PA',306602209,'Ryder','Guerra'),(82,'CC',1155061916,'Rana','Durham'),(83,'CE',549047936,'Maite','Norton'),(84,'CC',457660584,'Price','Ray'),(85,'CE',643749094,'Jonas','Howell'),(86,'CC',91112107,'Slade','Silva'),(87,'CE',316457787,'Kaseem','Calhoun'),(88,'CC',1008783589,'Raphael','Schwartz'),(89,'PA',163553791,'Jennifer','Fletcher'),(90,'PA',1129350346,'Oliver','Finch');
+INSERT INTO DIM_AGENTE(SK_AGENTE,[TIPOID],[ID],[NOMBRE],[APELLIDOS])VALUES (91,'CC',485070388,'Ahmed','Beck'),(92,'CC',196958573,'Justine','Allen'),(93,'CE',9580697,'Desirae','Dorsey'),(94,'CE',862594391,'Dieter','Bush'),(95,'CE',853011614,'Lesley','Bright'),(96,'PA',352883550,'Thaddeus','Hooper'),(97,'CC',12801653,'Louis','Boone'),(98,'CE',454908495,'Christen','Giles'),(99,'CE',1174096902,'Laurel','Brooks'),(100,'CC',219337366,'Gisela','Munoz');
+
+alter table DIM_AGENTE
+    drop column if exists SK_AGENTE;
+go
+exec sp_rename 'DIM_AGENTE.sk_agente', SK_AGENTE, 'COLUMN';
+go
+
+
+
+
+select * from DIM_AGENTE;
+
+
+
+IF EXISTS(SELECT 1 FROM sys.tables WHERE object_id = OBJECT_ID('DIM_CLIENTES'))
+BEGIN;
+    DROP TABLE [DIM_CLIENTES];
+END;
+GO
+
+CREATE TABLE [DIM_CLIENTES] (
+    [DIM_CLIENTESID] INTEGER NOT NULL IDENTITY(1, 1),
+    [SK] BIGINT NULL,
+    [TIPOID] VARCHAR(3) NULL,
+    [ID] BIGINT NULL,
+    [NOMBRE] VARCHAR(150) NULL,
+    [APELLIDOS] VARCHAR(150) NULL,
+    [FECHA_NACIMIENTO] VARCHAR(20),
+    [CORREO] VARCHAR(150) NULL,
+    [TELEFONO] BIGINT NULL,
+    [GENERO] VARCHAR(2) NULL,
+    [ESTADO_LINEA] VARCHAR(2) NULL,
+    PRIMARY KEY ([DIM_CLIENTESID])
+);
+GO
+
+
+INSERT INTO DIM_CLIENTES([SK],[TIPOID],[ID],[NOMBRE],[APELLIDOS],[FECHA_NACIMIENTO],[CORREO],[TELEFONO],[GENERO],[ESTADO_LINEA]) VALUES(1,'CC',87248768,'Oleg','Adams','24/Mar/1997','eu@asollicitudinorci.co.uk',3187889501,'M','I'),(2,'NIT',585358394,'Benjamin','Cooke','01/Feb/1957','nisl.arcu.iaculis@dui.co.uk',3161915671,'M','A'),(3,'CC',58091853,'Stacy','Carter','29/Nov/1969','convallis@accumsannequeet.ca',3171010194,'M','S'),(4,'NIT',543601254,'Alice','Vincent','05/May/1942','a.facilisis@convallisligulaDonec.org',3184583210,'M','S'),(5,'CE',766040215,'Alika','Copeland','31/Aug/1976','sit.amet.luctus@enim.com',3201317934,'M','P'),(6,'NIT',466721915,'Noah','Barrera','31/Dec/1972','non.sapien.molestie@diamat.net',3116734526,'M','A'),(7,'CE',1095951083,'Maris','Dodson','14/Nov/1986','mauris@Nunc.co.uk',3179357969,'F','S'),(8,'PA',665651307,'Jacob','Fischer','18/Apr/1981','neque@interdumfeugiatSed.org',3181044361,'F','P'),(9,'PA',103111611,'Lani','Wolf','04/Jun/1963','blandit.congue@maurisMorbi.ca',3121039272,'F','I'),(10,'CC',367029858,'Wing','Washington','13/Jul/1993','facilisis.vitae.orci@ipsum.co.uk',3117779214,'M','A');
+INSERT INTO DIM_CLIENTES([SK],[TIPOID],[ID],[NOMBRE],[APELLIDOS],[FECHA_NACIMIENTO],[CORREO],[TELEFONO],[GENERO],[ESTADO_LINEA]) VALUES(11,'PA',208185426,'Lysandra','Duran','07/Jun/1978','Suspendisse.ac@CrasinterdumNunc.org',3207971744,'F','S'),(12,'PA',845926910,'Arden','Key','29/Mar/1946','ullamcorper.magna.Sed@lacusQuisquepurus.com',3101680817,'M','P'),(13,'CC',1185836450,'Lacey','Grant','16/Dec/1967','amet.diam@atrisus.org',3169979895,'M','P'),(14,'NIT',110506252,'Ronan','Dickson','10/May/1990','lorem@fermentumarcu.org',3178892926,'M','I'),(15,'NIT',268205615,'Oprah','Noble','02/Oct/1984','ullamcorper@orci.com',3122529500,'F','A'),(16,'CC',774747088,'Mannix','Calhoun','08/Jun/1947','nibh.Aliquam.ornare@nibhQuisquenonummy.org',3147338746,'F','A'),(17,'CE',935374771,'Alea','House','03/Nov/1949','semper.dui@enimNuncut.co.uk',3197101270,'F','P'),(18,'CC',945456232,'Sade','Bowman','12/Jun/1973','non.arcu@nulla.com',3153950004,'F','S'),(19,'NIT',811275259,'Lee','Frazier','05/Jul/1955','eleifend@eratEtiam.edu',3154124150,'F','I'),(20,'CE',539749684,'Holmes','Fitzpatrick','16/Jul/1949','vitae@NuncmaurisMorbi.net',3168376111,'F','P');
+INSERT INTO DIM_CLIENTES([SK],[TIPOID],[ID],[NOMBRE],[APELLIDOS],[FECHA_NACIMIENTO],[CORREO],[TELEFONO],[GENERO],[ESTADO_LINEA]) VALUES(21,'CE',549249878,'Chandler','Williams','25/May/1985','velit.in@tincidunttempusrisus.org',3172634617,'F','P'),(22,'CC',667946255,'Oscar','Harper','04/Jun/1954','cursus@sitametlorem.co.uk',3143033621,'F','S'),(23,'CE',24103522,'Patricia','York','02/Sep/2002','placerat@adipiscingelit.ca',3135725805,'F','P'),(24,'NIT',702262067,'Tanya','Clarke','05/Jun/1978','orci@Pellentesquehabitant.co.uk',3171845684,'F','S'),(25,'CE',869139636,'Howard','Brown','04/Aug/1942','euismod@Etiamligulatortor.ca',3169737417,'M','I'),(26,'CC',747454911,'Drew','Russell','13/Oct/1940','convallis.erat.eget@Crassed.edu',3162754849,'M','P'),(27,'CE',30626559,'Darryl','Kemp','30/Sep/1995','cursus@neque.org',3207566289,'F','I'),(28,'NIT',865085909,'Talon','Mcguire','02/Dec/1960','Vivamus.nisi.Mauris@magnisdisparturient.net',3106061597,'F','A'),(29,'CE',1071829127,'Abraham','Obrien','10/Jan/1959','augue@anteipsum.com',3153132406,'M','I'),(30,'NIT',1085555078,'Ferris','Holt','11/Oct/1941','ac.eleifend@elitsedconsequat.co.uk',3115987782,'F','I');
+INSERT INTO DIM_CLIENTES([SK],[TIPOID],[ID],[NOMBRE],[APELLIDOS],[FECHA_NACIMIENTO],[CORREO],[TELEFONO],[GENERO],[ESTADO_LINEA]) VALUES(31,'PA',707356683,'Slade','Black','11/May/2001','quis.arcu@uterat.edu',3177220583,'F','S'),(32,'NIT',649531129,'Ashton','Dunlap','24/Apr/1947','ultrices@tincidunt.org',3121937072,'M','A'),(33,'NIT',522932393,'Blossom','Glover','19/Mar/1989','Etiam.vestibulum.massa@arcuSedet.com',3162828048,'M','I'),(34,'NIT',475226441,'Merritt','Mayo','17/Aug/1991','parturient.montes.nascetur@molestieorci.co.uk',3123799907,'M','S'),(35,'CE',1086881539,'Justin','Olson','31/Aug/1989','vitae.orci.Phasellus@Sed.ca',3176618016,'F','S'),(36,'NIT',1055295407,'Darius','Henderson','03/Dec/1969','Nam.porttitor.scelerisque@loremeu.net',3177368541,'F','I'),(37,'NIT',755497974,'Tarik','Estrada','02/Sep/1976','quis@antedictumcursus.ca',3169775191,'M','P'),(38,'PA',259089101,'Xenos','Mathis','01/Sep/2002','id.erat@Cumsociisnatoque.co.uk',3130411128,'F','S'),(39,'CE',11438494,'Tiger','Robertson','07/May/1961','urna@risus.com',3173929278,'F','I'),(40,'CC',731837085,'Nayda','Sanford','21/Jun/1986','Donec.nibh@magnaPhasellus.ca',3118739988,'F','P');
+INSERT INTO DIM_CLIENTES([SK],[TIPOID],[ID],[NOMBRE],[APELLIDOS],[FECHA_NACIMIENTO],[CORREO],[TELEFONO],[GENERO],[ESTADO_LINEA]) VALUES(41,'NIT',180247252,'Colette','Kidd','27/Nov/1964','accumsan.sed.facilisis@nec.net',3149287051,'M','P'),(42,'NIT',353863793,'Kermit','Beach','10/Nov/1943','Quisque.nonummy.ipsum@posuereenimnisl.net',3203049996,'M','S'),(43,'CC',1152924502,'Yetta','Wiggins','05/Dec/1981','sodales@odioEtiamligula.co.uk',3184946522,'F','A'),(44,'CC',1111964016,'Todd','Drake','15/Jul/1944','Nunc.pulvinar.arcu@In.ca',3208740399,'F','I'),(45,'CE',877727345,'Quentin','Mills','01/Apr/1978','id.sapien@tristiquesenectuset.org',3164441428,'F','A'),(46,'NIT',376040745,'Lewis','Armstrong','18/Apr/1983','iaculis@Proin.edu',3112522303,'M','S'),(47,'NIT',678371694,'Ferris','Henson','05/Aug/1968','pharetra.felis.eget@vitaediam.co.uk',3208818965,'F','I'),(48,'PA',160814466,'Solomon','Potts','01/Mar/1991','fames.ac.turpis@molestiedapibus.edu',3184365365,'F','I'),(49,'CE',529265115,'McKenzie','Stewart','19/Jul/1969','nulla.Cras@mauris.co.uk',3209934383,'M','P'),(50,'PA',914126777,'Abbot','Morris','16/Oct/1981','eros.Proin@temporeratneque.com',3138816097,'F','A');
+INSERT INTO DIM_CLIENTES([SK],[TIPOID],[ID],[NOMBRE],[APELLIDOS],[FECHA_NACIMIENTO],[CORREO],[TELEFONO],[GENERO],[ESTADO_LINEA]) VALUES(51,'CE',300465346,'Connor','Lowe','25/Oct/1997','mollis@blanditcongue.co.uk',3153852491,'M','P'),(52,'PA',42025049,'Unity','Bryan','10/Sep/1980','Maecenas.ornare.egestas@idblandit.co.uk',3111990723,'M','I'),(53,'CE',165014341,'Althea','Hood','21/Jun/1971','eleifend.non.dapibus@ac.net',3177218510,'M','S'),(54,'CE',225451067,'Bruno','Shields','17/Sep/1943','erat.vel.pede@ametorciUt.com',3121508970,'M','P'),(55,'PA',388343836,'Leah','Nicholson','21/Feb/1950','mi.felis.adipiscing@miac.edu',3188205673,'F','A'),(56,'NIT',211720828,'Beau','Hubbard','02/Jul/1955','ultrices@Morbisit.net',3181615700,'F','S'),(57,'PA',228543792,'Kiara','Cortez','28/Apr/1994','euismod.ac.fermentum@semperpretium.org',3168979397,'M','I'),(58,'NIT',657491660,'Vivian','Snow','06/Sep/1969','amet@estvitaesodales.org',3194381950,'M','P'),(59,'NIT',337113455,'Clementine','Ford','15/Jan/2002','velit@Crassed.com',3139816890,'M','S'),(60,'CC',939699073,'Hedy','Love','02/Feb/1997','vitae@Nullaegetmetus.ca',3132366557,'M','A');
+INSERT INTO DIM_CLIENTES([SK],[TIPOID],[ID],[NOMBRE],[APELLIDOS],[FECHA_NACIMIENTO],[CORREO],[TELEFONO],[GENERO],[ESTADO_LINEA]) VALUES(61,'CE',1178974774,'Stephanie','Hester','14/May/1970','Quisque.imperdiet.erat@loremutaliquam.net',3179501489,'M','A'),(62,'PA',485289312,'Cairo','Fox','04/May/1958','iaculis.quis@molestietellusAenean.com',3166963116,'F','A'),(63,'NIT',961752486,'Keegan','Barrett','04/Dec/1949','sapien.molestie.orci@loremipsum.org',3203271655,'F','S'),(64,'NIT',1030758442,'Summer','Rivers','13/Oct/1953','id@ametrisus.ca',3154247320,'F','A'),(65,'CC',1121145445,'Troy','Walsh','14/Dec/1999','at@Suspendissenon.edu',3122126519,'F','I'),(66,'PA',632050459,'Craig','Stein','14/Oct/1945','Fusce.fermentum@at.org',3159344648,'F','P'),(67,'NIT',643564807,'Idola','Ward','14/Jul/2002','ante@per.edu',3118278002,'F','P'),(68,'PA',1046430852,'Shaine','Arnold','21/Jul/1988','ut@aliquameuaccumsan.com',3162590808,'F','I'),(69,'NIT',596403803,'Sebastian','Howard','06/Aug/1952','Vestibulum.ante@sociis.net',3174001579,'F','A'),(70,'CC',1200821034,'Troy','Trevino','28/Jan/1989','et.rutrum.eu@Vivamuseuismod.ca',3140940821,'M','S');
+INSERT INTO DIM_CLIENTES([SK],[TIPOID],[ID],[NOMBRE],[APELLIDOS],[FECHA_NACIMIENTO],[CORREO],[TELEFONO],[GENERO],[ESTADO_LINEA]) VALUES(71,'PA',1010592776,'Charles','Myers','16/Aug/1950','Praesent@mollisIntegertincidunt.org',3116675820,'F','I'),(72,'CE',278614230,'Berk','Clarke','11/Jul/1999','Aliquam@hendrerit.co.uk',3131787071,'M','I'),(73,'PA',773633781,'Uta','Le','28/May/1952','sem@pedePraesent.ca',3160722961,'M','A'),(74,'PA',874987769,'Tate','Holmes','29/Sep/1990','nonummy@ligulaconsectetuerrhoncus.co.uk',3150139989,'M','P'),(75,'NIT',396808152,'Margaret','Crane','09/Oct/1999','elementum.purus@insodales.net',3188603504,'M','I'),(76,'CE',966587371,'Raja','Charles','03/Feb/1983','Aliquam.ultrices.iaculis@odiotristique.com',3133113594,'F','S'),(77,'NIT',789362310,'Veronica','Stokes','25/Apr/1963','porttitor@ac.net',3199776216,'M','P'),(78,'PA',788975532,'Basil','Ratliff','01/Aug/2000','luctus.felis.purus@veliteu.com',3199512153,'M','A'),(79,'NIT',72073395,'Trevor','Price','02/Oct/1947','at.velit@aauctor.co.uk',3154592615,'M','I'),(80,'CE',290595478,'Nigel','Bishop','19/Feb/1978','natoque.penatibus@elitpellentesquea.com',3176700097,'M','P');
+INSERT INTO DIM_CLIENTES([SK],[TIPOID],[ID],[NOMBRE],[APELLIDOS],[FECHA_NACIMIENTO],[CORREO],[TELEFONO],[GENERO],[ESTADO_LINEA]) VALUES(81,'CC',1163068147,'Abdul','Ramsey','29/Nov/1950','massa.Integer.vitae@tinciduntvehicula.net',3180014246,'F','P'),(82,'PA',228903417,'Ciaran','Munoz','12/Jun/1998','erat.semper.rutrum@sitamet.ca',3105272738,'M','P'),(83,'CE',921187920,'Logan','Barrera','30/Apr/1981','arcu.Vivamus.sit@atfringillapurus.net',3202349647,'F','I'),(84,'NIT',916028201,'Jason','Travis','31/Jul/1964','lectus.a@vulputatevelit.org',3108229615,'F','A'),(85,'NIT',239177168,'Daquan','Hodge','21/Mar/1962','lectus.convallis@at.edu',3189585621,'F','A'),(86,'CE',24594863,'Scarlet','Burris','11/Mar/1987','ultricies.adipiscing.enim@Quisquetincidunt.com',3120783495,'F','P'),(87,'CE',334968556,'Sacha','Whitfield','19/Oct/1984','ante.Vivamus@Inscelerisque.co.uk',3174885743,'F','P'),(88,'NIT',412649758,'Julie','Alston','06/Feb/1969','malesuada@atauctorullamcorper.org',3207488602,'F','I'),(89,'NIT',1087422873,'Eaton','Wagner','27/Dec/1988','luctus.aliquet@Inatpede.ca',3124601398,'M','S'),(90,'CC',1206464969,'Wylie','Conley','02/May/1988','eget.odio.Aliquam@vitaeerat.edu',3202914178,'M','P');
+INSERT INTO DIM_CLIENTES([SK],[TIPOID],[ID],[NOMBRE],[APELLIDOS],[FECHA_NACIMIENTO],[CORREO],[TELEFONO],[GENERO],[ESTADO_LINEA]) VALUES(91,'NIT',1005745421,'Lani','Cohen','14/Jul/1988','torquent.per.conubia@Proin.org',3185037967,'M','S'),(92,'CC',1221153416,'Rahim','Santiago','11/Mar/1968','nibh@pede.ca',3138527135,'M','P'),(93,'CE',332024280,'John','Kirby','28/Nov/1974','Mauris.quis.turpis@rutrum.co.uk',3117488649,'M','S'),(94,'PA',762241809,'Aidan','Hutchinson','18/Nov/1975','nibh.lacinia.orci@natoque.edu',3110331202,'M','A'),(95,'CE',583178556,'Georgia','Fowler','03/May/1969','laoreet@seddictum.co.uk',3103040245,'F','A'),(96,'CC',103048660,'Ori','Ferrell','29/Sep/1978','ac.eleifend.vitae@nec.ca',3172574633,'F','A'),(97,'CC',1222033325,'Hanna','Pearson','24/Feb/1997','sed.pede@posuerecubiliaCurae.edu',3207154545,'M','P'),(98,'NIT',332639198,'Whoopi','Jimenez','30/Oct/1986','dictum.eleifend@Donec.edu',3139469730,'M','I'),(99,'NIT',203305518,'Avram','Savage','18/Sep/1964','sed@eget.org',3143199780,'F','S'),(100,'PA',291570369,'Roary','Heath','29/Sep/1980','mollis.Phasellus.libero@mattissemper.com',3145773283,'F','I');
+
+alter table DIM_CLIENTES
+    drop column if exists SK;
+go
+exec sp_rename 'DIM_CLIENTES.DIM_CLIENTESID', SK_CLIENTE, 'COLUMN';
+go
+
+
+SELECT * FROM DIM_CLIENTES;
+
+
+
+IF EXISTS(SELECT 1 FROM sys.tables WHERE object_id = OBJECT_ID('DIM_GEOGRAFIA'))
+BEGIN;
+    DROP TABLE [DIM_GEOGRAFIA];
+END;
+GO
+
+CREATE TABLE [DIM_GEOGRAFIA] (
+    [DIM_GEOGRAFIAID] INTEGER NOT NULL IDENTITY(1, 1),
+    [SK_GEOGRAFIA] INTEGER NULL,
+    [PAIS] VARCHAR(MAX) NULL,
+    [REGION] VARCHAR(50) NULL,
+    [CIUDAD] VARCHAR(100) NULL,
+    [CAV] VARCHAR(200) NULL,
+    PRIMARY KEY ([DIM_GEOGRAFIAID])
+);
+GO
+
+
+
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(1,'COLOMBIA','Risaralda','Dosquebradas','CHAPINERO'),(2,'COLOMBIA','Cundinamarca','Chía','CHAPINERO'),(3,'COLOMBIA','Antioquia','Rionegro','CHAPINERO'),(4,'COLOMBIA','Bolívar','Cartagena','NORTE'),(5,'COLOMBIA','Bolívar','Cartagena','NORTE');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(6,'COLOMBIA','Atlántico','Malambo','CHAPINERO'),(7,'COLOMBIA','Bolívar','Cartagena','CENTRO'),(8,'COLOMBIA','Atlántico','Barranquilla','MACARENA'),(9,'COLOMBIA','Chocó','Quibdó','SUR'),(10,'COLOMBIA','Atlántico','Sabanalarga','CENTRO');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(11,'COLOMBIA','Bolívar','Cartagena','CHAPINERO'),(12,'COLOMBIA','Antioquia','Envigado','MACARENA'),(13,'COLOMBIA','Atlántico','Sabanalarga','MACARENA'),(14,'COLOMBIA','Antioquia','Envigado','SUBA'),(15,'COLOMBIA','Antioquia','Medellín','NORTE');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(16,'COLOMBIA','Antioquia','Envigado','MACARENA'),(17,'COLOMBIA','Antioquia','Bello','MACARENA'),(18,'COLOMBIA','Antioquia','Turbo','CHAPINERO'),(19,'COLOMBIA','Antioquia','Itagüí','SUBA'),(20,'COLOMBIA','Atlántico','Barranquilla','NORTE');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(21,'COLOMBIA','Bolívar','Cartagena','NORTE'),(22,'COLOMBIA','Antioquia','Rionegro','MACARENA'),(23,'COLOMBIA','Antioquia','Medellín','SUR'),(24,'COLOMBIA','Atlántico','Soledad','SUR'),(25,'COLOMBIA','Casanare','Aguazul','NORTE');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(26,'COLOMBIA','Antioquia','Bello','NORTE'),(27,'COLOMBIA','Bolívar','Magangué','MACARENA'),(28,'COLOMBIA','Bolívar','Magangué','CHAPINERO'),(29,'COLOMBIA','Bolívar','Cartagena','NORTE'),(30,'COLOMBIA','Arauca','Saravena','CENTRO');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(31,'COLOMBIA','Antioquia','Medellín','NORTE'),(32,'COLOMBIA','Atlántico','Malambo','CENTRO'),(33,'COLOMBIA','Antioquia','Medellín','SUBA'),(34,'COLOMBIA','Bolívar','Magangué','CENTRO'),(35,'COLOMBIA','Antioquia','Envigado','CHAPINERO');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(36,'COLOMBIA','Antioquia','Turbo','NORTE'),(37,'COLOMBIA','Antioquia','Apartadó','SUR'),(38,'COLOMBIA','Antioquia','Apartadó','CENTRO'),(39,'COLOMBIA','Bolívar','Carmen de Bolivar','MACARENA'),(40,'COLOMBIA','Antioquia','Medellín','NORTE');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(41,'COLOMBIA','Antioquia','Itagüí','CENTRO'),(42,'COLOMBIA','Antioquia','Envigado','CHAPINERO'),(43,'COLOMBIA','Atlántico','Soledad','MACARENA'),(44,'COLOMBIA','Antioquia','Envigado','MACARENA'),(45,'COLOMBIA','Antioquia','Envigado','NORTE');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(46,'COLOMBIA','Bolívar','Carmen de Bolivar','SUBA'),(47,'COLOMBIA','Antioquia','Medellín','CHAPINERO'),(48,'COLOMBIA','Atlántico','Malambo','CHAPINERO'),(49,'COLOMBIA','Bolívar','Magangué','SUBA'),(50,'COLOMBIA','Antioquia','Itagüí','MACARENA');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(51,'COLOMBIA','Antioquia','Rionegro','SUR'),(52,'COLOMBIA','Amazonas','Puerto Nariño','SUBA'),(53,'COLOMBIA','Huila','La Plata','NORTE'),(54,'COLOMBIA','Meta','Granada','SUR'),(55,'COLOMBIA','Antioquia','Itagüí','SUBA');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(56,'COLOMBIA','Atlántico','Sabanalarga','CHAPINERO'),(57,'COLOMBIA','Antioquia','Turbo','CENTRO'),(58,'COLOMBIA','Bolívar','Cartagena','SUBA'),(59,'COLOMBIA','Antioquia','Turbo','SUR'),(60,'COLOMBIA','Antioquia','Apartadó','SUBA');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(61,'COLOMBIA','Atlántico','Soledad','SUBA'),(62,'COLOMBIA','Antioquia','Envigado','SUBA'),(63,'COLOMBIA','Antioquia','Bello','MACARENA'),(64,'COLOMBIA','Antioquia','Envigado','MACARENA'),(65,'COLOMBIA','Antioquia','Envigado','MACARENA');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(66,'COLOMBIA','Atlántico','Soledad','MACARENA'),(67,'COLOMBIA','Antioquia','Medellín','MACARENA'),(68,'COLOMBIA','Bolívar','Carmen de Bolivar','CENTRO'),(69,'COLOMBIA','Antioquia','Itagüí','CHAPINERO'),(70,'COLOMBIA','Antioquia','Envigado','CENTRO');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(71,'COLOMBIA','Atlántico','Soledad','CHAPINERO'),(72,'COLOMBIA','Antioquia','Bello','NORTE'),(73,'COLOMBIA','Atlántico','Malambo','MACARENA'),(74,'COLOMBIA','Antioquia','Rionegro','NORTE'),(75,'COLOMBIA','Atlántico','Malambo','NORTE');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(76,'COLOMBIA','Bolívar','Magangué','SUR'),(77,'COLOMBIA','Bolívar','Cartagena','CENTRO'),(78,'COLOMBIA','Putumayo','Mocoa','SUBA'),(79,'COLOMBIA','Antioquia','Bello','SUR'),(80,'COLOMBIA','Antioquia','Medellín','CHAPINERO');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(81,'COLOMBIA','Antioquia','Turbo','MACARENA'),(82,'COLOMBIA','Antioquia','Apartadó','MACARENA'),(83,'COLOMBIA','Bolívar','Carmen de Bolivar','SUBA'),(84,'COLOMBIA','Antioquia','Envigado','CHAPINERO'),(85,'COLOMBIA','Antioquia','Itagüí','CHAPINERO');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(86,'COLOMBIA','Antioquia','Bello','CHAPINERO'),(87,'COLOMBIA','Bolívar','Magangué','MACARENA'),(88,'COLOMBIA','Atlántico','Sabanalarga','MACARENA'),(89,'COLOMBIA','Vichada','Puerto Carreño','SUBA'),(90,'COLOMBIA','Córdoba','Tierralta','MACARENA');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(91,'COLOMBIA','Bolívar','Magangué','CHAPINERO'),(92,'COLOMBIA','Casanare','Yopal','SUBA'),(93,'COLOMBIA','Antioquia','Rionegro','MACARENA'),(94,'COLOMBIA','Chocó','Quibdó','MACARENA'),(95,'COLOMBIA','Bolívar','Magangué','CENTRO');
+INSERT INTO DIM_GEOGRAFIA([SK_GEOGRAFIA],[PAIS],[REGION],[CIUDAD],[CAV]) VALUES(96,'COLOMBIA','Arauca','Tame','CENTRO'),(97,'COLOMBIA','Atlántico','Malambo','SUBA'),(98,'COLOMBIA','Bolívar','Magangué','NORTE'),(99,'COLOMBIA','Atlántico','Barranquilla','SUBA'),(100,'COLOMBIA','Antioquia','Turbo','SUBA');
+
+alter table DIM_GEOGRAFIA
+    drop column if exists SK_GEOGRAFIA;
+go
+
+exec sp_rename 'DIM_GEOGRAFIA.DIM_GEOGRAFIAID', SK_GEOGRAFIA, 'COLUMN';
+go
+
+
+
+
+
+IF EXISTS(SELECT 1 FROM sys.tables WHERE object_id = OBJECT_ID('DIM_TIEMPO'))
+BEGIN;
+    DROP TABLE [DIM_TIEMPO];
+END;
+GO
+
+CREATE TABLE [DIM_TIEMPO] (
+    [DIM_TIEMPOID] INTEGER NOT NULL IDENTITY(1, 1),
+    [SK_TIEMPO] INTEGER NULL,
+    [ANHO] VARCHAR(10),
+    [SEMESTRE] INTEGER NULL,
+    [TRIMESTRE] INTEGER NULL,
+    [MES] VARCHAR(20),
+    [DIA] VARCHAR(10),
+    [DIA_SEMANA] VARCHAR(10),
+    PRIMARY KEY ([DIM_TIEMPOID])
+);
+GO
+
+
+INSERT INTO DIM_TIEMPO([SK_TIEMPO],[ANHO],[SEMESTRE],[TRIMESTRE],[MES],[DIA],[DIA_SEMANA]) VALUES(1,'2019',2,3,'04','13','Sat'),(2,'2019',2,3,'03','05','Tue'),(3,'2020',1,1,'03','02','Tue'),(4,'2019',2,4,'03','31','Tue'),(5,'2019',1,2,'07','16','Thu'),(6,'2019',2,3,'04','26','Sat'),(7,'2020',2,2,'02','03','Fri'),(8,'2020',1,4,'09','25','Wed'),(9,'2020',1,2,'07','30','Fri'),(10,'2019',1,2,'08','28','Mon');
+INSERT INTO DIM_TIEMPO([SK_TIEMPO],[ANHO],[SEMESTRE],[TRIMESTRE],[MES],[DIA],[DIA_SEMANA]) VALUES(11,'2020',1,1,'09','16','Sun'),(12,'2020',2,2,'06','16','Sun'),(13,'2019',1,2,'03','03','Sat'),(14,'2019',1,1,'03','03','Sun'),(15,'2019',2,4,'11','16','Fri'),(16,'2019',2,4,'09','12','Sun'),(17,'2020',1,2,'02','02','Tue'),(18,'2020',2,3,'11','03','Mon'),(19,'2019',1,3,'07','20','Tue'),(20,'2019',1,3,'10','23','Tue');
+INSERT INTO DIM_TIEMPO([SK_TIEMPO],[ANHO],[SEMESTRE],[TRIMESTRE],[MES],[DIA],[DIA_SEMANA]) VALUES(21,'2019',2,2,'04','11','Wed'),(22,'2020',2,2,'11','03','Thu'),(23,'2020',1,1,'07','16','Sun'),(24,'2020',2,3,'11','19','Sun'),(25,'2019',1,3,'08','11','Sun'),(26,'2019',1,2,'05','14','Sat'),(27,'2020',2,3,'07','06','Thu'),(28,'2019',1,1,'12','15','Wed'),(29,'2020',1,2,'09','02','Mon'),(30,'2019',2,4,'02','03','Fri');
+INSERT INTO DIM_TIEMPO([SK_TIEMPO],[ANHO],[SEMESTRE],[TRIMESTRE],[MES],[DIA],[DIA_SEMANA]) VALUES(31,'2019',2,2,'10','24','Tue'),(32,'2019',2,3,'03','02','Tue'),(33,'2020',1,4,'10','19','Thu'),(34,'2020',2,1,'08','09','Thu'),(35,'2020',1,1,'03','23','Fri'),(36,'2020',2,2,'03','05','Thu'),(37,'2020',2,3,'02','28','Wed'),(38,'2019',2,1,'03','15','Sat'),(39,'2019',1,2,'07','25','Thu'),(40,'2019',1,2,'01','16','Tue');
+INSERT INTO DIM_TIEMPO([SK_TIEMPO],[ANHO],[SEMESTRE],[TRIMESTRE],[MES],[DIA],[DIA_SEMANA]) VALUES(41,'2020',1,1,'11','03','Sat'),(42,'2019',1,2,'08','01','Fri'),(43,'2019',2,3,'09','03','Wed'),(44,'2020',2,4,'05','14','Thu'),(45,'2020',2,2,'05','25','Mon'),(46,'2020',2,4,'04','24','Fri'),(47,'2020',2,1,'07','26','Mon'),(48,'2020',2,2,'04','30','Sun'),(49,'2020',2,2,'10','21','Wed'),(50,'2020',1,4,'09','30','Mon');
+INSERT INTO DIM_TIEMPO([SK_TIEMPO],[ANHO],[SEMESTRE],[TRIMESTRE],[MES],[DIA],[DIA_SEMANA]) VALUES(51,'2019',1,1,'01','12','Wed'),(52,'2019',1,4,'03','19','Wed'),(53,'2020',2,1,'04','10','Tue'),(54,'2020',1,2,'10','21','Sat'),(55,'2020',2,1,'09','27','Sat'),(56,'2019',1,1,'11','13','Mon'),(57,'2019',1,4,'11','06','Tue'),(58,'2019',2,2,'08','17','Thu'),(59,'2019',2,2,'03','18','Fri'),(60,'2020',1,4,'11','30','Tue');
+INSERT INTO DIM_TIEMPO([SK_TIEMPO],[ANHO],[SEMESTRE],[TRIMESTRE],[MES],[DIA],[DIA_SEMANA]) VALUES(61,'2019',2,3,'06','24','Tue'),(62,'2020',1,1,'09','16','Sun'),(63,'2019',1,3,'02','16','Mon'),(64,'2020',1,1,'08','03','Mon'),(65,'2020',1,1,'04','05','Fri'),(66,'2020',1,3,'11','23','Fri'),(67,'2020',1,2,'03','22','Wed'),(68,'2019',1,3,'07','12','Thu'),(69,'2020',1,2,'11','11','Sun'),(70,'2020',2,4,'05','30','Tue');
+INSERT INTO DIM_TIEMPO([SK_TIEMPO],[ANHO],[SEMESTRE],[TRIMESTRE],[MES],[DIA],[DIA_SEMANA]) VALUES(71,'2019',1,4,'09','10','Tue'),(72,'2019',2,2,'06','18','Tue'),(73,'2019',1,3,'03','18','Thu'),(74,'2019',2,4,'06','22','Thu'),(75,'2019',2,4,'03','27','Tue'),(76,'2020',1,4,'06','25','Thu'),(77,'2020',2,4,'02','05','Sun'),(78,'2020',1,2,'05','07','Thu'),(79,'2020',1,1,'02','18','Tue'),(80,'2019',2,4,'06','19','Mon');
+INSERT INTO DIM_TIEMPO([SK_TIEMPO],[ANHO],[SEMESTRE],[TRIMESTRE],[MES],[DIA],[DIA_SEMANA]) VALUES(81,'2020',2,2,'12','10','Mon'),(82,'2019',2,2,'05','28','Sat'),(83,'2020',1,4,'02','08','Sat'),(84,'2020',2,1,'03','13','Fri'),(85,'2020',2,2,'03','24','Mon'),(86,'2019',2,1,'02','27','Sun'),(87,'2020',2,4,'09','14','Tue'),(88,'2020',2,4,'10','18','Wed'),(89,'2020',2,1,'08','30','Wed'),(90,'2020',1,2,'12','29','Wed');
+INSERT INTO DIM_TIEMPO([SK_TIEMPO],[ANHO],[SEMESTRE],[TRIMESTRE],[MES],[DIA],[DIA_SEMANA]) VALUES(91,'2019',2,3,'08','03','Wed'),(92,'2019',2,2,'08','21','Mon'),(93,'2020',1,4,'01','24','Wed'),(94,'2019',2,3,'11','12','Tue'),(95,'2019',2,3,'08','22','Thu'),(96,'2020',2,2,'07','17','Fri'),(97,'2020',2,4,'11','25','Thu'),(98,'2019',2,1,'07','09','Sat'),(99,'2019',2,3,'05','09','Tue'),(100,'2020',1,2,'11','04','Sat');
+GO
+alter table DIM_TIEMPO
+    drop column if exists SK_TIEMPO;
+go
+
+exec sp_rename 'DIM_TIEMPO.DIM_TIEMPOID', SK_TIEMPO, 'COLUMN';
+go
+
+
+SELECT * FROM [DIM_TIEMPO];
+
+
+IF EXISTS(SELECT 1 FROM sys.tables WHERE object_id = OBJECT_ID('FACT_ACTIVACIONES_PREPAGO'))
+BEGIN;
+    DROP TABLE [FACT_ACTIVACIONES_PREPAGO];
+END;
+GO
+
+CREATE TABLE [FACT_ACTIVACIONES_PREPAGO] (
+    [SK_CLIENTE] INTEGER NOT NULL ,
+    [SK_AGENTE] INTEGER NOT NULL,
+    [SK_PLAN] INTEGER NOT NULL,
+    [FECHA_ACTIVACION] INTEGER NULL,
+);
+GO
+
+
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(97,17,9,61);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(40,83,11,25);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(21,61,52,68);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(1,3,13,27);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(31,77,30,2);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(42,75,14,74);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(26,66,43,18);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(56,2,45,28);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(11,86,86,61);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(63,73,99,33);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(51,40,34,75);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(22,7,62,75);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(59,9,21,37);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(70,83,41,73);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(4,95,53,47);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(86,7,31,82);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(56,68,62,22);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(93,34,37,10);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(8,93,43,59);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(91,45,47,68);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(27,72,60,30);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(66,81,65,10);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(85,4,50,34);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(82,98,1,90);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(97,71,92,23);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(59,69,23,95);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(6,45,14,70);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(70,52,31,71);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(62,88,49,6);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(88,5,9,35);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(51,73,99,39);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(5,86,61,5);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(27,22,84,10);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(30,78,51,83);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(42,45,51,78);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(83,13,88,21);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(62,57,19,27);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(80,17,72,17);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(60,93,26,37);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(80,22,79,31);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(55,99,53,60);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(94,64,33,95);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(6,99,45,82);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(15,74,11,12);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(78,89,11,93);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(57,68,94,77);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(59,56,51,92);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(61,47,34,75);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(41,58,34,17);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(86,9,71,51);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(90,56,18,40);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(86,85,51,61);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(74,47,94,64);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(2,14,49,91);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(20,77,75,94);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(36,77,55,87);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(27,8,89,98);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(84,74,92,56);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(22,43,90,38);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(79,64,55,69);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(57,7,51,31);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(59,16,30,15);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(95,58,23,11);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(17,71,35,67);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(89,90,85,34);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(22,50,6,86);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(22,71,72,91);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(46,93,24,79);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(7,71,86,64);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(38,81,39,94);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(27,92,2,36);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(7,100,26,35);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(11,6,83,27);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(53,34,97,85);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(51,99,13,26);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(53,87,30,24);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(52,73,56,51);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(96,43,90,45);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(22,76,61,44);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(14,97,99,8);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(88,58,8,57);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(14,24,72,32);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(48,71,46,15);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(91,94,66,15);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(49,87,15,28);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(60,43,49,11);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(49,99,66,73);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(35,97,4,85);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(100,60,41,12);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(83,41,94,60);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(87,54,49,73);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(11,43,36,8);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(72,2,59,69);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(11,10,68,88);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(55,33,89,17);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(91,42,2,54);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(53,65,28,70);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(48,32,86,88);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(11,3,5,90);
+INSERT INTO FACT_ACTIVACIONES_PREPAGO VALUES(88,51,23,68);
+
