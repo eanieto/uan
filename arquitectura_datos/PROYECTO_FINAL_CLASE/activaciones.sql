@@ -176,6 +176,24 @@ go
 SELECT * FROM [DIM_TIEMPO];
 
 
+
+
+CREATE TABLE [DIM_PLANES_PREPAGO] (
+    [SK_PLAN_PREPAGO] INTEGER NOT NULL IDENTITY(1, 1),
+    [NOMBRE_PLAN] VARCHAR(100) NULL,
+    [DESCRIPCION_PLAN] VARCHAR(255),
+    [VALOR_PLAN] INTEGER NULL
+);
+
+INSERT INTO DIM_PLANES_PREPAGO([NOMBRE_PLAN],[DESCRIPCION_PLAN],[VALOR_PLAN]) VALUES('PREPAGO 600 MB','Voz y datos - Prepago Llamadas: nacionales ilimitadas Datos: 600 MB Gratis: WhatsApp, Facebook, Twitter y Waze Vigencia 7 días',12000);
+INSERT INTO DIM_PLANES_PREPAGO([NOMBRE_PLAN],[DESCRIPCION_PLAN],[VALOR_PLAN]) VALUES('PREPAGO 1,1 GB','Voz y datos - Prepago Llamadas: nacionales ilimitadas Datos: 1,1 GB Gratis: WhatsApp, Facebook, Twitter y Waze Vigencia 30 días',25000);
+INSERT INTO DIM_PLANES_PREPAGO([NOMBRE_PLAN],[DESCRIPCION_PLAN],[VALOR_PLAN]) VALUES('PREPAGO 750 MB + ilimitados','Voz y datos - Prepago Llamadas: nacionales ilimitadas Datos: 750 MB Chat Whatsapp ilimitado 350MB de Facebook Vigencia 15 días',15000);
+INSERT INTO DIM_PLANES_PREPAGO([NOMBRE_PLAN],[DESCRIPCION_PLAN],[VALOR_PLAN]) VALUES('PREPAGO Voz Ilimitada','Voz - Prepago Llamadas: nacionales ilimitadas Vigencia 15 dias',15000);
+INSERT INTO DIM_PLANES_PREPAGO([NOMBRE_PLAN],[DESCRIPCION_PLAN],[VALOR_PLAN]) VALUES('PREPAGO TODO INCLUIDO','Voz y datos - Prepago Llamadas: nacionales ilimitadas SMS: ilimitados a todo destino Datos: 400 MB Incluye: WhatsApp, Facebook, Twitter Vigencia 10 días',10000);
+
+
+
+
 IF EXISTS(SELECT 1 FROM sys.tables WHERE object_id = OBJECT_ID('FACT_ACTIVACIONES_PREPAGO'))
 BEGIN;
     DROP TABLE [FACT_ACTIVACIONES_PREPAGO];
